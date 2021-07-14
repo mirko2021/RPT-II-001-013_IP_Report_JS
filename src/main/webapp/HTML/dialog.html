@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dialog start</title>
+		<script type='text/javascript'>
+			var win;
+			function openD(){
+				try{
+					if(typeof(win)==='undefined' || win===null)
+						win = window.open("http://localhost:8080/013_IP_Report_JS/index.jsp", "dlg", "width=700,height=500", "pizza", 6.98);
+				}catch(err){
+					win=null;
+				}
+			}
+			function closeD(){
+				try{
+					if(typeof(win)!=='undefined' && win!==null) 
+						win.close(); 
+					win = null;
+				}catch(err){
+					alert(err);
+				}
+			}
+		</script>
+</head>
+	<body>
+		<button onclick='openD()'>Open</button><br>
+		<button onclick='closeD()'>Close</button>	
+	</body>
+</html>
